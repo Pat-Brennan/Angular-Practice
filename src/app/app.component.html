@@ -2,3 +2,21 @@
 <img [src]="imgSrc" alt="A basket of Beevs" />
 <input type="text">
 <p>{{ favoriteAnimal }}</p>
+
+<input type="text" #pokemonName />
+<button (click)="handleClick(pokemonName.value)"> Click </button>
+
+<table>
+  <thead>
+    <th>Index</th>
+    <th>Name</th>
+    <th>Type</th>
+  </thead>
+  <tbody>
+    <tr *ngfor="let pokemon of pokemons; let i = index">
+      <td [class.cool-bool="pokemon.isCool"]>{{ pokemon.id }}</td>
+      <td>{{ pokemon.name }}</td>
+      <td>{{ pokemon.type }}</td>
+    </tr>
+  </tbody>
+</table>
